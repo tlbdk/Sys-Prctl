@@ -87,7 +87,10 @@ if($^O eq 'linux') {
         $machine = "i386";
     }
 
-    if ($machine =~ m/^i[3456]86$/) {
+    if ($machine =~ /^i[3456]86$/) {
+        $SYS_prctl = 172;
+    
+    } elsif ($machine =~ /^blackfin|cris|frv|h8300|m32r|m68k|microblaze|mn10300|sh|s390|parisc$/) {
         $SYS_prctl = 172;
     
     } elsif ($machine eq "x86_64") {
@@ -95,9 +98,6 @@ if($^O eq 'linux') {
     
     } elsif ($machine eq "sparc64") {
         $SYS_prctl = 147;
-    
-    } elsif ($machine eq "m68k") {
-        $SYS_prctl = 170;
    
     } elsif ($machine eq "ppc") {
         $SYS_prctl = 171;
@@ -107,6 +107,21 @@ if($^O eq 'linux') {
 
     } elsif ($machine eq "alpha") {
         $SYS_prctl = 348;
+    
+    } elsif ($machine eq "arm") {
+        $SYS_prctl = 0x900000 + 172;
+    
+    } elsif ($machine eq "avr32") {
+        $SYS_prctl = 148;
+    
+    } elsif ($machine eq "mips") { # 32bit
+        $SYS_prctl = 4000 + 192;
+    
+    } elsif ($machine eq "mips64") { # 64bit
+        $SYS_prctl = 5000 + 153;
+    
+    } elsif ($machine eq "xtensa") {
+        $SYS_prctl = 130;
 
     } else {
         delete @INC{qw<syscall.ph asm/unistd.ph bits/syscall.ph _h2ph_pre.ph 
