@@ -1,3 +1,6 @@
+Version 1.02 (Tue Sep 20 2011) 
+  * Fix critic test
+
 Version 1.01 (Wed Apr 21 2010) 
  * Don't import everything from POSIX, only what is used.
  * Add support for arch in current Linux kernel

@@ -2,7 +2,7 @@ package Sys::Prctl;
 use strict;
 use warnings;
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 # TODO: FreeBSD support "libc.call('setproctitle', 'hippy\0');"
 
