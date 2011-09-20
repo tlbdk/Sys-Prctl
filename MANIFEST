@@ -10,3 +10,4 @@ t/name.t
 t/perlcriticrc
 t/pod-coverage.t
 t/pod.t
+META.json

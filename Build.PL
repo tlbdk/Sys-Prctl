@@ -9,10 +9,9 @@ my $builder = Module::Build->new(
     license            => 'perl',
     dist_author        => 'Troels Liebe Bentsen <troels@infopro.dk>',
     dist_version_from  => 'lib/Sys/Prctl.pm',
-    create_readme      => 1,
     create_makefile_pl => 'passthrough',
+    create_readme      => 1,
     requires => {
-        'perl'   => '>= 5.8.0',
         'POSIX'  => 0,
         'Config' => 0,
     },
